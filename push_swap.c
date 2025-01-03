@@ -13,15 +13,22 @@
 
 int main(int ac, char **av)
 {
-    t_list **stack_a;
-    t_list **stack_b;
+    t_stack *a;
+    t_stack *b;
 
-    if (ac < 2)
-        return (-1);
-    ft_check_arguments(ac, av);
-    stack_a = (t_list **)malloc(sizeof(t_list));
-	stack_b = (t_list **)malloc(sizeof(t_list));
-    *stack_a = NULL;
-    *stack_b = NULL;
+    if (ac == 1 || (ac == 2 && !av[1][0]))
+        return (0);
+    if (ac == 2)
+        av = ft_split(av[1], ' ');
+    init_stack_a(&a, av + 1);
+    if (!ft_stack_sorted(a))
+    {
+        if (ft_stack_size(a) == 2)
+            ft_sa(&a);
+        else if (ft_stack_size(a) == 3)
+            sort_three(&a);
+        else
+            sort_stacks(&a, &b);
+    }
     return (0);
 }

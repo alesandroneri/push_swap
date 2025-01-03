@@ -7,10 +7,14 @@ GNL = get_next_line/
 LIBFT_A=	$(LIBFT)libft.a
 
 SRC =	push_swap.c \
-		src/check_arguments.c \
-		src/ft_operations.c \
-		src/push_swap_utils.c
-		
+		src/algorithm/find_values.c \
+		src/algorithm/sort_three.c \
+		src/stack_functions/stack_utils.c \
+		src/arguments/check_arguments.c \
+		src/operations/ft_push_operations.c \
+		src/operations/ft_rotate_operations.c \
+		src/operations/ft_swap_operations.c \
+		src/operations/ft_reverse_rotate_operations.c
 
 CC = cc
 
@@ -21,7 +25,7 @@ OBJS = $(SRC:.c=.o)
 all: $(LIBFT_A) $(NAME)
 
 $(NAME): $(OBJS)
-	$(CC) $(CC_FLAGS) $(OBJS) $(LIBFT) -O $(NAME)
+	$(CC) $(CC_FLAGS) $(OBJS) $(LIBFT_A) -o $(NAME)
 
 .c.o:
 	$(CC) $(CC_FLAGS) -c $< -o $(<:.c=.o)
@@ -39,9 +43,7 @@ fclean: clean
 
 re: fclean $(NAME)
 
-run: re
-	@clear
-	@$(CC) $(CC_FLAGS) main.c $(NAME)
-	@./a.out
+val:
+	valgrind ./$(NAME) ${var}
 
-.PHONY: all clean fclean re run 
+.PHONY: all clean fclean re

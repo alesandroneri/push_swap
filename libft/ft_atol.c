@@ -25,7 +25,7 @@ long	ft_atol(const char *nptr)
 	}
 	return (result * sign);
 }
-
+/*
 #include <stdio.h>
 #include <limits.h>
 
@@ -34,4 +34,4 @@ int main(void)
     printf("%ld\n", ft_atol("9223372036854775807"));
     printf("%ld\n", ft_atol("-9223372036854775808"));
     return (0);
-}
+}*/
