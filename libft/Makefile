@@ -43,7 +43,15 @@ SRC =	ft_isascii.c \
 		ft_lstdelone.c \
 		ft_lstclear.c \
 		ft_lstiter.c \
-		ft_lstmap.c
+		ft_lstmap.c \
+		ft_printf/ft_printf.c \
+		ft_printf/ft_putstr_count.c \
+		ft_printf/ft_putnbr_count.c \
+		ft_printf/ft_putnbr_base_count.c \
+		ft_printf/ft_putchar_count.c \
+		ft_printf/ft_put_ptr.c \
+		get_next_line/get_next_line.c \
+		get_next_line/ft_gnljoin.c 
 
 CC = cc
 

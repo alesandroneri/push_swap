@@ -50,6 +50,7 @@ void init_stack_a(t_stack **a, char **av)
             ft_putendl_fd("Error", 2);
             return ;
         }
+        fill_stack(a, n);
         i++;
     }
 }

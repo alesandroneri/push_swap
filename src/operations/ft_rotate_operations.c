@@ -7,7 +7,7 @@ int ft_rotate_lst(t_stack **stack)
     t_stack *tail;  // Aponta para o último elemento
 
     // Verifica se há pelo menos dois elementos na stack
-    if (ft_lstsize(*stack) < 2)
+    if (ft_stack_size(*stack) < 2)
         return (-1);
     head = *stack;
     tail = ft_lstlast(*stack);
@@ -38,7 +38,7 @@ int ft_rb(t_stack **stack_b)
 // Desloca simultaneamente as stacks_a e stack_b uma posição para cima | Comando 'rr'
 int ft_rr(t_stack **stack_a, t_list **stack_b)
 {
-    if ((ft_lstsize(*stack_a) < 2) || (ft_lstsize(*stack_b) < 2))
+    if ((ft_stack_size(*stack_a) < 2) || (ft_stack_size(*stack_b) < 2))
         return (-1);
     ft_rotate_lst(stack_a);
     ft_rotate_lst(stack_b);

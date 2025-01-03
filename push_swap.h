@@ -5,6 +5,8 @@
 #define FALSE 0
 
 #include "libft/libft.h"
+
+
 typedef struct s_stack
 {
 	int					value;
@@ -24,6 +26,7 @@ int ft_stack_sorted(t_stack *stack);
 void init_stack_a(t_stack **a, char **av);
 void fill_stack(t_stack **stack, int n);
 
+//funcoes para pegar os maiores e menores valores
 t_stack *find_min(t_stack *stack);
 t_stack *find_max(t_stack *stack);
 

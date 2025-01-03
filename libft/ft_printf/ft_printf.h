@@ -13,6 +13,7 @@
 # define FT_PRINTF_H
 
 #include "../libft.h"
+#include <stdarg.h>
 
 int		ft_put_ptr(void	*ptr);
 int		ft_putchar_count(char c);

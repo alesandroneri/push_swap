@@ -9,15 +9,14 @@ int ft_swap_lst(t_stack **stack)
     int temp_index;    // Armazena temporariamente o índice para realizar a troca
 
     // Verifica se há pelo menos dois elementos na stack
-    if (ft_lstsize(*stack) < 2)
+    if (ft_stack_size(*stack) < 2)
         return (-1);
     head = *stack;    // Obtém o primeiro elemento
     next = head->next; // Obtém o segundo elemento
 
     // Verifica se os ponteiros head e next são válidos
     if (!head && !next)
-        ft_printf("Error\n");
-
+        ft_putendl_fd("Error", 2);
     // Troca os valores e índices dos dois primeiros nós
     temp_value = head->value;
     temp_index = head->index;
@@ -52,7 +51,7 @@ int ft_sb(t_stack **stack_b)
 int ft_ss(t_stack **stack_a, t_list **stack_b)
 {
     // Verifica se ambas as stacks têm pelo menos dois elementos
-    if ((ft_lstsize(*stack_a) < 2) || (ft_lstsize(*stack_b) < 2))
+    if ((ft_stack_size(*stack_a) < 2) || (ft_stack_size(*stack_b) < 2))
         return (-1);
 
     // Realiza a troca em ambas as stacks
