@@ -36,7 +36,7 @@ void    ft_check_arguments(int ac, char **av)
     i = 1;
     if (ac == 2)
         ft_split(av[1], ' ');
-    while (av[i])
+    while (av[i] != NULL)
     {
         if (!ft_is_all_numbers(av[i]))// retornar mensagem de error.
             ft_putendl_fd("Error", 2);

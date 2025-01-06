@@ -8,6 +8,7 @@ LIBFT_A=	$(LIBFT)libft.a
 
 SRC =	push_swap.c \
 		src/algorithm/find_values.c \
+		src/algorithm/radix_sort.c \
 		src/algorithm/sort_three.c \
 		src/stack_functions/stack_utils.c \
 		src/arguments/check_arguments.c \

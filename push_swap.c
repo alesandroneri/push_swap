@@ -14,7 +14,7 @@
 int main(int ac, char **av)
 {
     t_stack *a;
-    //t_stack *b;
+    t_stack *b;
 
     if (ac == 1 || (ac == 2 && !av[1][0]))
         return (0);
@@ -27,8 +27,8 @@ int main(int ac, char **av)
             ft_sa(&a);
         else if (ft_stack_size(a) == 3)
             sort_three(&a);
-        //else
-        //   sort_stacks(&a, &b);
+        else
+           hex_radix_sort(&a, &b);
     }
     return (0);
 }

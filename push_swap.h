@@ -11,13 +11,21 @@ typedef struct s_stack
 {
 	int					value;
 	int					index;
-	int					push_cost;
-	int				above_median;
-	int				cheapest;
-	struct s_stack	*target_node;
 	struct s_stack	*next;
 	struct s_stack	*prev;
 }	t_stack; 
+
+// typedef struct s_stack
+// {
+// 	int					value;
+// 	int					index;
+// 	int					push_cost;
+// 	int				above_median;
+// 	int				cheapest;
+// 	struct s_stack	*target_node;
+// 	struct s_stack	*next;
+// 	struct s_stack	*prev;
+// }	t_stack; 
 
 //stack functions
 int ft_stack_size(t_stack *stack);
@@ -32,6 +40,7 @@ t_stack *find_max(t_stack *stack);
 
 //sort algorithm
 void sort_three(t_stack **stack);
+void hex_radix_sort(t_stack **a, t_stack **b);
 
 
 //arguments
