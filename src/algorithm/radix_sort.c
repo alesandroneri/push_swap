@@ -23,16 +23,35 @@ void	ft_sort_tab(int *tab, int size)
 void ft_put_index(t_stack **a, int *tab)
 {
     int i;
+    int size;
+    t_stack *current;
 
+    current = *a;
+    size = 0;
     i = 0;
-    while (a != NULL)
+    while (current != NULL)
     {
-        tab[i] = (*a)->value;
-        a = (*a)->next;
+        tab[i] = current->value;
+        current = current->next;
         i++;
     }
-    ft_sort_tab(tab, ft_stack_size(*a));
-
+    ft_sort_tab(tab, size);
+    // Associar os índices ordenados de volta à pilha
+    current = *a;
+    while (current != NULL)
+    {
+        i = 0;
+        while (i < size)
+        {
+            if (current->value == tab[i])
+            {
+                current->index = i; // Associar índice baseado na posição em tab
+                break;
+            }
+            i++;
+        }
+        current = current->next;
+    }
 }
 
 void hex_radix_sort(t_stack **a, t_stack **b) 

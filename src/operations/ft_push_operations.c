@@ -1,4 +1,5 @@
 #include "../../push_swap.h"
+#include "../../libft/ft_printf/ft_printf.h"
 
 // Move o primeiro elemento de uma stack para o topo de outra stack | Implementa 'pa' e 'pb'
 int	ft_push_lst(t_stack **stack_from, t_stack **stack_to)

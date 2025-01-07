@@ -6,11 +6,12 @@
 
 #include "libft/libft.h"
 
-
 typedef struct s_stack
 {
 	int					value;
 	int					index;
+	struct s_stack *head;
+	struct s_stack *tail;
 	struct s_stack	*next;
 	struct s_stack	*prev;
 }	t_stack; 
@@ -27,6 +28,9 @@ typedef struct s_stack
 // 	struct s_stack	*prev;
 // }	t_stack; 
 
+//free
+void	ft_stackclear(t_stack **stack);
+
 //stack functions
 int ft_stack_size(t_stack *stack);
 t_stack *ft_stack_last(t_stack *stack);
@@ -41,7 +45,6 @@ t_stack *find_max(t_stack *stack);
 //sort algorithm
 void sort_three(t_stack **stack);
 void hex_radix_sort(t_stack **a, t_stack **b);
-
 
 //arguments
 int ft_is_int(long nb, char **av, int i);

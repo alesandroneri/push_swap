@@ -1,4 +1,5 @@
 #include "../../push_swap.h"
+#include "../../libft/ft_printf/ft_printf.h"
 
 // Troca os dois primeiros elementos de uma stack | Implementa 'sa' e 'sb'
 int ft_swap_lst(t_stack **stack)

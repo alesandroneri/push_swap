@@ -2,11 +2,10 @@ NAME = push_swap
 
 LIBFT = libft/
 
-GNL = get_next_line/
-
 LIBFT_A=	$(LIBFT)libft.a
 
 SRC =	push_swap.c \
+		src/free/free.c \
 		src/algorithm/find_values.c \
 		src/algorithm/radix_sort.c \
 		src/algorithm/sort_three.c \
@@ -19,7 +18,9 @@ SRC =	push_swap.c \
 
 CC = cc
 
-CC_FLAGS = -g -Wall -Wextra -Werror 
+INCLUDE= includes
+
+CC_FLAGS = -g -Wall -Wextra -Werror -I$(INCLUDE)
 
 OBJS = $(SRC:.c=.o)
 
@@ -44,7 +45,10 @@ fclean: clean
 
 re: fclean $(NAME)
 
-val:
+v:
 	valgrind ./$(NAME) ${var}
 
-.PHONY: all clean fclean re
+c:
+	@find . -type f -iname "*.c" -exec grep "//" {} +
+
+.PHONY: all clean fclean re v c

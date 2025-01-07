@@ -1,4 +1,5 @@
 #include "../../push_swap.h"
+#include "../../libft/ft_printf/ft_printf.h"
 
 // Desloca todos os elementos da stack uma posição para cima | Implementa 'ra' e 'rb'
 int ft_rotate_lst(t_stack **stack)
@@ -10,7 +11,7 @@ int ft_rotate_lst(t_stack **stack)
     if (ft_stack_size(*stack) < 2)
         return (-1);
     head = *stack;
-    tail = ft_lstlast(*stack);
+    tail = ft_stack_last(*stack);
     *stack = head->next; // Move a cabeça para o próximo elemento
     head->next = NULL;   // Remove o vínculo do antigo head
     tail->next = head;   // Coloca o antigo head como o último elemento

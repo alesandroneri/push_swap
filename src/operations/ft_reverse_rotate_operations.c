@@ -1,5 +1,5 @@
 #include "../../push_swap.h"
-
+#include "../../libft/ft_printf/ft_printf.h"
 
 // Função para deslocar todos os elementos da lista uma posição para baixo (reverse rotate)
 // Essa função é usada em operações como rra e rrb no contexto do push_swap.
