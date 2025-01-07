@@ -49,7 +49,7 @@ int ft_sb(t_stack **stack_b)
 }
 
 // Troca simultaneamente os dois primeiros elementos das stacks_a e stack_b | Comando 'ss'
-int ft_ss(t_stack **stack_a, t_list **stack_b)
+int ft_ss(t_stack **stack_a, t_stack **stack_b)
 {
     // Verifica se ambas as stacks têm pelo menos dois elementos
     if ((ft_stack_size(*stack_a) < 2) || (ft_stack_size(*stack_b) < 2))

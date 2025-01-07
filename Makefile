@@ -5,7 +5,6 @@ LIBFT = libft/
 LIBFT_A=	$(LIBFT)libft.a
 
 SRC =	push_swap.c \
-		src/free/free.c \
 		src/algorithm/find_values.c \
 		src/algorithm/radix_sort.c \
 		src/algorithm/sort_three.c \

@@ -37,7 +37,7 @@ int ft_rb(t_stack **stack_b)
 }
 
 // Desloca simultaneamente as stacks_a e stack_b uma posição para cima | Comando 'rr'
-int ft_rr(t_stack **stack_a, t_list **stack_b)
+int ft_rr(t_stack **stack_a, t_stack **stack_b)
 {
     if ((ft_stack_size(*stack_a) < 2) || (ft_stack_size(*stack_b) < 2))
         return (-1);

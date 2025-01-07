@@ -12,6 +12,7 @@ int ft_reverse_rotate_lst(t_stack **stack)
     if (ft_stack_size(*stack) < 2)
         return (-1);
     head = *stack;// Inicializa `head` com o início da lista.
+    tail = NULL;
     // Percorre a lista até encontrar o penúltimo elemento.
     // O objetivo é localizar o nó cuja próxima referência é o último nó.
     while (head != NULL)
@@ -51,7 +52,7 @@ int ft_rrb(t_stack **stack_b)
 }
 
 // Desloca simultaneamente as stacks_a e stack_b uma posição para baixo | Comando 'rrr'
-int ft_rrr(t_list **stack_a, t_list **stack_b)
+int ft_rrr(t_stack **stack_a, t_stack **stack_b)
 {
     if ((ft_stack_size(*stack_a) < 2) || (ft_stack_size(*stack_b) < 2))
         return (-1);
