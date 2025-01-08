@@ -44,6 +44,8 @@ SRC =	ft_isascii.c \
 		ft_lstclear.c \
 		ft_lstiter.c \
 		ft_lstmap.c \
+		ft_atol_base.c \
+		ft_atoi_base.c \
 		ft_printf/ft_printf.c \
 		ft_printf/ft_putstr_count.c \
 		ft_printf/ft_putnbr_count.c \

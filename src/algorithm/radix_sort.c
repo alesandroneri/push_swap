@@ -69,14 +69,14 @@ void hex_radix_sort(t_stack **a, t_stack **b)
         while (j < size) 
         {
             head_a = *a;
-            if (head_a->index >> (4 * i) & 0xF)
+            if (head_a && head_a->index >> (4 * i) & 0xF)
                 ft_ra(a);
             else 
                 ft_pb(b, a);
             j++;
         }
         while (ft_stack_size(*a) != 0)
-            ft_pa(a, b);
+            ft_pa(b, a);
         i++;
     }
 }

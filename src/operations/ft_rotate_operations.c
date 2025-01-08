@@ -1,5 +1,4 @@
 #include "../../push_swap.h"
-#include "../../libft/ft_printf/ft_printf.h"
 
 // Desloca todos os elementos da stack uma posição para cima | Implementa 'ra' e 'rb'
 int ft_rotate_lst(t_stack **stack)

@@ -16,6 +16,8 @@ int main(int ac, char **av)
     t_stack *a;
     t_stack *b;
 
+    a = NULL;
+    b = NULL;
     if (ac == 1 || (ac == 2 && !av[1][0]))
         return (0);
     if (ac == 2)
@@ -33,5 +35,6 @@ int main(int ac, char **av)
         else
            hex_radix_sort(&a, &b);
     }
+    ft_print_stack(a);
     return (0);
 }

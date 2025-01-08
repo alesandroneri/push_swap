@@ -12,6 +12,8 @@
 #ifndef LIBFT_H
 # define LIBFT_H
 
+# include "ft_printf/ft_printf.h"
+# include "get_next_line/get_next_line.h"
 # include <unistd.h>
 # include <stdlib.h>
 
@@ -43,6 +45,8 @@ int		ft_memcmp(const void *s1, const void *s2, size_t n);
 char	*ft_strnstr(const char *big, const char *little, size_t len);
 int		ft_atoi(const char *nptr);
 long	ft_atol(const char *nptr);
+long	ft_atol_base(char *str, int str_base);
+int	ft_atoi_base(char *str, int str_base);
 void	*ft_calloc(size_t nmemb, size_t size);
 char	*ft_strdup(const char *s);
 char	*ft_substr(char const *s, unsigned int start, size_t len);

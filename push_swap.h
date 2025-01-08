@@ -1,14 +1,16 @@
 #ifndef PUSH_SWAP_H
 #define PUSH_SWAP_H
 
+#include "libft/libft.h"
+
 #define TRUE 1
 #define FALSE 0
 
-#include "libft/libft.h"
 
 typedef struct s_stack
 {
 	int					value;
+	int                 hex_value;
 	int					index;
 	struct s_stack	*next;
 	struct s_stack	*prev;
@@ -35,6 +37,7 @@ t_stack *ft_stack_last(t_stack *stack);
 int ft_stack_sorted(t_stack *stack);
 void init_stack_a(t_stack **a, char **av);
 void fill_stack(t_stack **stack, int n);
+void ft_print_stack(t_stack *stack);
 
 //funcoes para pegar os maiores e menores valores
 t_stack *find_min(t_stack *stack);

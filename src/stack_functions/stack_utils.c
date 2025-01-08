@@ -1,4 +1,5 @@
 #include "../../push_swap.h"
+//#include "../../libft/ft_printf/ft_printf.h"
 
 int ft_stack_size(t_stack *stack)
 {
@@ -17,11 +18,14 @@ int ft_stack_size(t_stack *stack)
 
 t_stack *ft_stack_last(t_stack *stack)
 {
+    t_stack *last;
+
     if (!stack)
         return (NULL);
-    while (stack != NULL)
-        stack = stack->next;
-    return (stack);
+    last = stack;
+    while (last->next != NULL)
+        last = last->next;
+    return (last);
 }
 
 int ft_stack_sorted(t_stack *stack)
@@ -42,7 +46,7 @@ void init_stack_a(t_stack **a, char **av)
     long n;
 
     i = 0;
-    while (av[i] != NULL)
+    while (av[i])
     {
         n = ft_atol(av[i]);
         if (n < -2147483648 || n > 2147483647)
@@ -67,7 +71,8 @@ void fill_stack(t_stack **stack, int n)
         return ;
     node->next = NULL;
     node->value = n;
-    if (!*stack)
+    node->hex_value = ft_atoi_base(ft_itoa(n), 16);
+    if (!(*stack))
     {
         *stack = node;
         node->prev = NULL;
@@ -77,5 +82,16 @@ void fill_stack(t_stack **stack, int n)
         last_node = ft_stack_last(*stack);
         last_node->next = node;
         node->prev = last_node; 
+    }
+}
+
+void ft_print_stack(t_stack *stack)
+{
+    if (!stack)
+        return ;
+    while (stack != NULL)
+    {
+        ft_printf("%d ", stack->value);
+        stack = stack->next;
     }
 }

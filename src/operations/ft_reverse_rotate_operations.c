@@ -1,5 +1,4 @@
 #include "../../push_swap.h"
-#include "../../libft/ft_printf/ft_printf.h"
 
 // Função para deslocar todos os elementos da lista uma posição para baixo (reverse rotate)
 // Essa função é usada em operações como rra e rrb no contexto do push_swap.
@@ -12,7 +11,7 @@ int ft_reverse_rotate_lst(t_stack **stack)
     if (ft_stack_size(*stack) < 2)
         return (-1);
     head = *stack;// Inicializa `head` com o início da lista.
-    tail = NULL;
+    tail = ft_stack_last(*stack);
     // Percorre a lista até encontrar o penúltimo elemento.
     // O objetivo é localizar o nó cuja próxima referência é o último nó.
     while (head != NULL)

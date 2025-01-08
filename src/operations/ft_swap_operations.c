@@ -1,13 +1,13 @@
 #include "../../push_swap.h"
-#include "../../libft/ft_printf/ft_printf.h"
 
 // Troca os dois primeiros elementos de uma stack | Implementa 'sa' e 'sb'
 int ft_swap_lst(t_stack **stack)
 {
     t_stack *head;      // Aponta para o primeiro elemento da stack
     t_stack *next;      // Aponta para o segundo elemento da stack
-    int temp_value;    // Armazena temporariamente o valor para realizar a troca
-    int temp_index;    // Armazena temporariamente o índice para realizar a troca
+    int temp_value;     // Armazena temporariamente o valor para realizar a troca
+    int temp_index;     // Armazena temporariamente o índice para realizar a troca
+    int temp_hex_value; // Armazena temporariamente o valor hexadecimal para a troca
 
     // Verifica se há pelo menos dois elementos na stack
     if (ft_stack_size(*stack) < 2)
@@ -20,10 +20,13 @@ int ft_swap_lst(t_stack **stack)
         ft_putendl_fd("Error", 2);
     // Troca os valores e índices dos dois primeiros nós
     temp_value = head->value;
+    temp_hex_value = head->hex_value;
     temp_index = head->index;
     head->value = next->value;
+    head->hex_value = next->hex_value;
     head->index = next->index;
     next->value = temp_value;
+    next->hex_value = temp_hex_value;
     next->index = temp_index;
     return (0);
 }
