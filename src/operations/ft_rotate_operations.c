@@ -13,6 +13,7 @@ int ft_rotate_lst(t_stack **stack)
     tail = ft_stack_last(*stack);
     *stack = head->next; // Move a cabeça para o próximo elemento
     head->next = NULL;   // Remove o vínculo do antigo head
+    head->prev = tail;   // O antigo head agora aponta para o antigo tail
     tail->next = head;   // Coloca o antigo head como o último elemento
     return (0);
 }

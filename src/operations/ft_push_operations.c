@@ -19,11 +19,14 @@ int	ft_push_lst(t_stack **stack_from, t_stack **stack_to)
 	{
 		head_to = temp;
 		head_to->next = NULL;
+		head_to->prev = NULL;
 		*stack_to = head_to;
 	}
 	else
 	{
 		temp->next = head_to;
+		head_to->prev = temp;
+		temp->prev = NULL;
 		*stack_to = temp;
 	}
 	return (0);

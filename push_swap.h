@@ -2,6 +2,7 @@
 #define PUSH_SWAP_H
 
 #include "libft/libft.h"
+#include <stdlib.h>
 
 #define TRUE 1
 #define FALSE 0
@@ -10,7 +11,6 @@
 typedef struct s_stack
 {
 	int					value;
-	int                 hex_value;
 	int					index;
 	struct s_stack	*next;
 	struct s_stack	*prev;
@@ -29,7 +29,7 @@ typedef struct s_stack
 // }	t_stack; 
 
 //free
-void	ft_stackclear(t_stack **stack);
+void	ft_free_stack(t_stack **stack);
 
 //stack functions
 int ft_stack_size(t_stack *stack);

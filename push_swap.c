@@ -35,6 +35,11 @@ int main(int ac, char **av)
         else
            hex_radix_sort(&a, &b);
     }
-    ft_print_stack(a);
+    if (a)
+        ft_print_stack(a);
+    else
+        ft_printf("Pilha vazia\n");
+    ft_free_stack(&a);
+    ft_free_stack(&b);
     return (0);
 }

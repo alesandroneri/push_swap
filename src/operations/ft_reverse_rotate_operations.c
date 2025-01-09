@@ -27,7 +27,8 @@ int ft_reverse_rotate_lst(t_stack **stack)
         head = head->next;
     }
     tail->next = *stack;// Faz o antigo último elemento tail apontar para o início atual da lista.
-    *stack = tail;// Atualiza o início da lista para que o último elemento se torne o novo início.
+    (*stack)->prev = tail;// Atualiza o início da lista para que o último elemento se torne o novo início.
+    *stack = tail;
     return (0);
 }
 

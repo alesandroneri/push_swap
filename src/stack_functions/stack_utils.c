@@ -1,5 +1,5 @@
 #include "../../push_swap.h"
-//#include "../../libft/ft_printf/ft_printf.h"
+#include <stdio.h>
 
 int ft_stack_size(t_stack *stack)
 {
@@ -32,7 +32,7 @@ int ft_stack_sorted(t_stack *stack)
 {
     if (!stack)
         return (0);
-    while (stack != NULL)
+    while (stack->next != NULL)
     {
         if (stack->value > stack->next->value)
             return (FALSE);
@@ -71,7 +71,6 @@ void fill_stack(t_stack **stack, int n)
         return ;
     node->next = NULL;
     node->value = n;
-    node->hex_value = ft_atoi_base(ft_itoa(n), 16);
     if (!(*stack))
     {
         *stack = node;

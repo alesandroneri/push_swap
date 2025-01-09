@@ -13,6 +13,7 @@ SRC =	push_swap.c \
 		src/operations/ft_push_operations.c \
 		src/operations/ft_rotate_operations.c \
 		src/operations/ft_swap_operations.c \
+		src/free/free.c \
 		src/operations/ft_reverse_rotate_operations.c
 
 CC = cc

@@ -27,7 +27,7 @@ void ft_put_index(t_stack **a, int *tab)
     t_stack *current;
 
     current = *a;
-    size = 0;
+    size = ft_stack_size(*a);
     i = 0;
     while (current != NULL)
     {
@@ -60,23 +60,29 @@ void hex_radix_sort(t_stack **a, t_stack **b)
     int j;
     int size;
     t_stack *head_a;
+    int *tab;
 
     size = ft_stack_size(*a);
+    tab = (int *)malloc(sizeof(int) * size);
+    if(!tab)
+        return ;
+    ft_put_index(a, tab);
     i = 0;
-    while (i < 8) 
+    while (i < 32) 
     {
         j = 0;
         while (j < size) 
         {
             head_a = *a;
-            if (head_a && head_a->index >> (4 * i) & 0xF)
+            if ((head_a->index >> i) & 0x1) 
                 ft_ra(a);
             else 
-                ft_pb(b, a);
+                ft_pb(a, b);
             j++;
         }
-        while (ft_stack_size(*a) != 0)
+        while (ft_stack_size(*b) > 0)
             ft_pa(b, a);
         i++;
     }
+    free(tab);
 }
