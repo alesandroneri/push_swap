@@ -98,7 +98,7 @@ char	**ft_split(char const *s, char c)
 #include <stdio.h>
 int	main(void)
 {
-	char	str[] = "  tripouille  42  ";
+	char	str[] = "tripouille";
 	char	**strs = ft_split(str, ',');
 	int	i;
 

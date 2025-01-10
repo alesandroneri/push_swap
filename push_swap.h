@@ -30,6 +30,7 @@ typedef struct s_stack
 
 //free
 void	ft_free_stack(t_stack **stack);
+void ft_free_split(char **strs);
 
 //stack functions
 int ft_stack_size(t_stack *stack);
@@ -48,9 +49,9 @@ void sort_three(t_stack **stack);
 void hex_radix_sort(t_stack **a, t_stack **b);
 
 //arguments
-int ft_is_int(long nb, char **av, int i);
+int ft_is_int(long nb);
 int ft_is_all_numbers(char *nb);
-void    ft_check_arguments(int ac, char **av);
+int    ft_check_arguments(int ac, char **av);
 
 //operations
 int ft_swap_lst(t_stack **stack);

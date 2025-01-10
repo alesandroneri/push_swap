@@ -9,6 +9,17 @@ void ft_free_stack(t_stack **stack)
         temp = (*stack)->next;
         free(*stack);
         *stack = temp;
-        (*stack) = (*stack)->next;
     }
+}
+void ft_free_split(char **strs)
+{
+    int i;
+
+    i = 0;
+    while (strs[i] != NULL)
+    {
+        free(strs[i]);
+        i++;
+    }
+    free(strs);
 }

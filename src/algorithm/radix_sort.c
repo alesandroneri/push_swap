@@ -7,7 +7,7 @@ void	ft_sort_tab(int *tab, int size)
 
 	temp = 0;
 	i = 0;
-	while (i <= size - 2)
+	while (i < size -1)
 	{
 		if (tab[i] > tab[i + 1])
 		{
@@ -32,10 +32,16 @@ void ft_put_index(t_stack **a, int *tab)
     while (current != NULL)
     {
         tab[i] = current->value;
+        ft_printf("Valor copiado para tab[%d]: %d\n", i, tab[i]);
         current = current->next;
         i++;
     }
     ft_sort_tab(tab, size);
+
+    ft_printf("Array ordenado: ");
+	for (i = 0; i < size; i++)
+		ft_printf("%d ", tab[i]);
+	ft_printf("\n");
     // Associar os índices ordenados de volta à pilha
     current = *a;
     while (current != NULL)
@@ -46,6 +52,7 @@ void ft_put_index(t_stack **a, int *tab)
             if (current->value == tab[i])
             {
                 current->index = i; // Associar índice baseado na posição em tab
+                ft_printf("Valor %d recebe índice %d\n", current->value, i);
                 break;
             }
             i++;
@@ -67,6 +74,7 @@ void hex_radix_sort(t_stack **a, t_stack **b)
     if(!tab)
         return ;
     ft_put_index(a, tab);
+    free(tab);
     i = 0;
     while (i < 32) 
     {
@@ -74,15 +82,24 @@ void hex_radix_sort(t_stack **a, t_stack **b)
         while (j < size) 
         {
             head_a = *a;
-            if ((head_a->index >> i) & 0x1) 
+            ft_printf("Analisando índice: %d, bit %d: %d\n", head_a->index, i, (head_a->index >> i) & 0x1);
+            if ((head_a->index >> i) & 1)
+            {
                 ft_ra(a);
-            else 
+                ft_printf("Rotacionando: %d\n", head_a->value);
+            } 
+            else
+            {
                 ft_pb(a, b);
+                ft_printf("Movendo para B: %d\n", head_a->value);
+            }
             j++;
         }
         while (ft_stack_size(*b) > 0)
+        {
+            ft_printf("Movendo de volta para A: %d\n", (*b)->value);
             ft_pa(b, a);
+        }
         i++;
     }
-    free(tab);
 }
