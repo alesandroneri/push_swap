@@ -51,6 +51,7 @@ void radix(t_stack **a, t_stack **b);
 //arguments
 int ft_is_int(long nb);
 int ft_is_all_numbers(char *nb);
+int ft_count_split(char **split_args);
 int    ft_check_arguments(int ac, char **av);
 
 //operations

@@ -40,8 +40,12 @@ int main(int ac, char **av)
         split_args = ft_split(av[i], ' ');
         if(!split_args)
             return (ft_putendl_fd("Error", 2), 0);
-        if(!ft_check_arguments(0, split_args))
+        if(!ft_check_arguments(ft_count_split(split_args), split_args))
+        {
+            ft_free_split(split_args);
+            ft_free_stack(&a);
             return (ft_putendl_fd("Error", 2), 0);
+        }
         init_stack_a(&a, split_args);
         ft_free_split(split_args);
     }

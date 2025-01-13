@@ -14,6 +14,8 @@ int	ft_is_all_numbers(char *nb)
 
 	if (!nb)
 	  	return (0);
+	if (ft_strlen(nb) == 1 && (nb[0] == '-' || nb[0] == '+'))
+		return (0);
 	i = 0;
 	if (nb[0] == '-' || nb[0] == '+') // Verificacao de sinal.
 		i++;
@@ -26,57 +28,29 @@ int	ft_is_all_numbers(char *nb)
 	return (1);
 }
 
-#include <stdio.h>
-// Verificacao de argumentos caso sejam passados como uma unica string ou se forem passados como argumentos separados.
-int	ft_check_arguments(int ac, char **av)
+int ft_count_split(char **split_args)
 {
-	int i;
-	int j;
-	long nb;
-	char **split_args;
+    int count = 0;
 
-	i = 0;
-	while (++i < ac)
-	{
-		if (ft_strchr(av[i], ' '))
-		{
-		split_args = ft_split(av[i], ' ');
-		if (!split_args)
-			return (0);
-		j = 0;
-		while (split_args[j])
-		{
-			if (!ft_is_all_numbers(split_args[j]))
-			{
-				ft_printf("not all numbers");
-				ft_free_split(split_args);
-				return (0);
-			}
-			nb = ft_atol(split_args[j]);
-			if (!ft_is_int(nb))
-			{
-				ft_printf("not int");
-				ft_free_split(split_args);
-				return (0);
-			}
-			j++;
-		}
-		ft_free_split(split_args);
-		}
-		else
-		{
-            if (!ft_is_all_numbers(av[i]))
-			{
-				ft_printf("not all numbers: %s e %d", av[i], i);
-                return (0);
-			}
-			nb = ft_atol(av[i]);
-            if (!ft_is_int(nb))
-			{
-				ft_printf("not int");
-                return (0);
-			}
-        }
-	}
-	return (1);
+    while (split_args[count])
+        count++;
+    return (count);
+}
+
+int ft_check_arguments(int ac, char **av)
+{
+    int i;
+    long nb;
+
+    i = 0;
+    while (i < ac)
+    {
+        if (!ft_is_all_numbers(av[i])) // Verifica se cada argumento é um número.
+            return (0);
+        nb = ft_atol(av[i]); // Converte para long para verificar range.
+        if (!ft_is_int(nb)) // Verifica se está dentro do intervalo de int.
+            return (0);
+        i++;
+    }
+    return (1);
 }
