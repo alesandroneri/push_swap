@@ -27,10 +27,10 @@ OBJS = $(SRC:.c=.o)
 all: $(LIBFT_A) $(NAME)
 
 $(NAME): $(OBJS)
-	$(CC) $(CC_FLAGS) $(OBJS) $(LIBFT_A) -o $(NAME)
+	@$(CC) $(CC_FLAGS) $(OBJS) $(LIBFT_A) -o $(NAME)
 
 .c.o:
-	$(CC) $(CC_FLAGS) -c $< -o $(<:.c=.o)
+	@$(CC) $(CC_FLAGS) -c $< -o $(<:.c=.o)
 
 $(LIBFT_A):
 	@make -C $(LIBFT)
@@ -45,8 +45,10 @@ fclean: clean
 
 re: fclean $(NAME)
 
-v:
-	valgrind ./$(NAME) ${var}
+v:	$(NAME)
+	clear
+	@echo "input: ${var}\n"
+	@./$(NAME) ${var}
 
 c:
 	@find . -type f -iname "*.c" -exec grep "//" {} +

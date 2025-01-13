@@ -46,7 +46,7 @@ t_stack *find_max(t_stack *stack);
 
 //sort algorithm
 void sort_three(t_stack **stack);
-void hex_radix_sort(t_stack **a, t_stack **b);
+void radix(t_stack **a, t_stack **b);
 
 //arguments
 int ft_is_int(long nb);

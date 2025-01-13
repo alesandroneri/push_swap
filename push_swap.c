@@ -11,16 +11,16 @@
 /* ************************************************************************** */
 #include "push_swap.h"
 
-void sort_stack(t_stack *stack_a, t_stack *stack_b)
+void sort_stack(t_stack **stack_a, t_stack **stack_b)
 {
-    if (!ft_stack_sorted(stack_a))
+    if (!ft_stack_sorted(*stack_a))
     {
-        if (ft_stack_size(stack_a) == 2)
-            ft_sa(&stack_a);
-        else if (ft_stack_size(stack_a) == 3)
-            sort_three(&stack_a);
+        if (ft_stack_size(*stack_a) == 2)
+            ft_sa(stack_a);
+        else if (ft_stack_size(*stack_a) == 3)
+            sort_three(stack_a);
         else
-           hex_radix_sort(&stack_a, &stack_b);
+           radix(stack_a, stack_b);
     }
 }
 int main(int ac, char **av)
@@ -41,15 +41,12 @@ int main(int ac, char **av)
         if(!split_args)
             return (ft_putendl_fd("Error", 2), 0);
         if(!ft_check_arguments(0, split_args))
-            return (ft_putendl_fd("Error", 2), 0);;
+            return (ft_putendl_fd("Error", 2), 0);
         init_stack_a(&a, split_args);
         ft_free_split(split_args);
     }
-    sort_stack(a, b);
-    if (a)
-        ft_print_stack(a);
-    else
-        ft_printf("Pilha vazia\n");
+    sort_stack(&a, &b);
+    ft_print_stack(a);
     ft_free_stack(&a);
     ft_free_stack(&b);
     return (0);

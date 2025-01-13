@@ -66,7 +66,7 @@ $(NAME): $(OBJS)
 	@ar rc $(NAME) $(OBJS)
 
 .c.o:
-	$(CC) $(CC_FLAGS) -c $< -o $(<:.c=.o)
+	@$(CC) $(CC_FLAGS) -c $< -o $(<:.c=.o)
 
 all: $(NAME)
 
