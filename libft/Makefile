@@ -53,6 +53,7 @@ SRC =	ft_isascii.c \
 		ft_printf/ft_putchar_count.c \
 		ft_printf/ft_put_ptr.c \
 		get_next_line/get_next_line.c \
+		ft_strcmp.c \
 		get_next_line/ft_gnljoin.c 
 
 CC = cc
