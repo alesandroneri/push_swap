@@ -1,36 +1,36 @@
-#include "../../push_swap.h"
+#include "src/checker/checker_bonus.h"
 
-int commands(char *line, t_stack **stack_a, t_stack **stack_b)
+int read_operations(char *line, t_stack **stack_a, t_stack **stack_b)
 {
-    if(!ft_strcmp(line, "sa"))
+    if(!ft_strcmp(line, "sa\n"))
         return (ft_swap_lst(stack_a), 0);
-    if(!ft_strcmp(line, "sb"))
+    if(!ft_strcmp(line, "sb\n"))
         return (ft_swap_lst(stack_b), 0);
-    if(!ft_strcmp(line, "ss"))
+    if(!ft_strcmp(line, "ss\n"))
     {
         ft_swap_lst(stack_a);
         ft_swap_lst(stack_b);
         return (0);
     }
-    if(!ft_strcmp(line, "pa"))
+    if(!ft_strcmp(line, "pa\n"))
         return (ft_push_lst(stack_b, stack_a), 0);
-    if(!ft_strcmp(line, "pb"))
+    if(!ft_strcmp(line, "pb\n"))
         return (ft_push_lst(stack_a, stack_b), 0);
-    if(!ft_strcmp(line, "ra"))
+    if(!ft_strcmp(line, "ra\n"))
         return (ft_rotate_lst(stack_a), 0);
-    if(!ft_strcmp(line, "rb"))
+    if(!ft_strcmp(line, "rb\n"))
         return (ft_rotate_lst(stack_b), 0);
-    if(!ft_strcmp(line, "rr"))
+    if(!ft_strcmp(line, "rr\n"))
     {
         ft_rotate_lst(stack_a);
         ft_rotate_lst(stack_b);
         return (0);
     }
-    if(!ft_strcmp(line, "rra"))
+    if(!ft_strcmp(line, "rra\n"))
         return (ft_reverse_rotate_lst(stack_a), 0);
-    if(!ft_strcmp(line, "rrb"))
+    if(!ft_strcmp(line, "rrb\n"))
         return (ft_reverse_rotate_lst(stack_b), 0);
-    if(!ft_strcmp(line, "rrr"))
+    if(!ft_strcmp(line, "rrr\n"))
     {
         ft_reverse_rotate_lst(stack_a);
         ft_reverse_rotate_lst(stack_b);
@@ -57,14 +57,19 @@ int main(int ac, char **av)
     char **split_args;
     char *line;
     int i;
+    int j;
 
-    if (ac == 1 || (ac == 2 && !av[1][0]))
-        return (0);
-
-    a = (t_stack *)malloc(sizeof(t_stack));
-    b = (t_stack *)malloc(sizeof(t_stack));
     a = NULL;
     b = NULL;
+    i = 0;
+    while (av[i])
+    {
+        if (av[i][0] == '\0')
+            return (ft_putendl_fd("Error", 2), 0);
+        i++;
+    }
+    if (ac == 1 || (ac == 2 && !av[1][0]))
+        return (0);
     i = 0;
     while (++i < ac)
     {
@@ -74,20 +79,40 @@ int main(int ac, char **av)
         if(!ft_check_arguments(ft_count_split(split_args), split_args))
         {
             ft_free_split(split_args);
-            ft_free_stack(&a);
             return (ft_putendl_fd("Error", 2), 0);
         }
+        j = i + 1;
+		while (av[j] != NULL)
+		{
+            if (av[i][0] == '\0')
+            {
+                if (split_args)
+                    ft_free_split(split_args);
+                return (ft_putendl_fd("Error", 2), 0);
+            }
+			if (ft_strcmp(av[i], av[j]) == 0)
+            {
+                if (split_args)
+                    ft_free_split(split_args);
+				return (ft_putendl_fd("Error", 2), 0);
+            }
+			j++;
+		}
         init_stack_a(&a, split_args);
         ft_free_split(split_args);
     }
-    while ((line = get_next_line(0)))
+    line = get_next_line(0);
+    while (line != NULL)
     {
-        if (commands(line, &a, &b))
+        if (read_operations(line, &a, &b))
         {
+            if (line)
+                free(line);
             ft_putendl_fd("Error", 2);
             return(-1);
         }
         free(line);
+        line = get_next_line(0);
     }
     print_message(&a, &b);
     return (0);

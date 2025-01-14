@@ -1,5 +1,4 @@
-#include "../../push_swap.h"
-#include <stdio.h>
+#include "checker_bonus.h"
 
 int ft_stack_size(t_stack *stack)
 {
@@ -27,18 +26,6 @@ t_stack *ft_stack_last(t_stack *stack)
         last = last->next;
     return (last);
 }
-int ft_stack_sorted2(t_stack *stack)
-{
-    if (!stack)
-        return (0);
-    while (stack->next != NULL)
-    {
-        if (stack->value < stack->next->value)
-            return (0);
-        stack = stack->next;
-    }
-    return (1);
-}
 
 int ft_stack_sorted(t_stack *stack)
 {
@@ -57,6 +44,8 @@ void init_stack_a(t_stack **a, char **av)
     int i;
     long n;
 
+    if (!a || !*a || !*av || !av)
+        return ;
     i = 0;
     while (av[i])
     {
@@ -76,7 +65,7 @@ void fill_stack(t_stack **stack, int n)
     t_stack *last_node;
     t_stack *node;
 
-    if (!stack)
+    if (!stack || !(*stack))
         return ;
     node = (t_stack *)malloc(sizeof(t_stack));
     if (!node)

@@ -1,4 +1,4 @@
-#include "../../push_swap.h"
+#include "checker_bonus.h"
 
 // Verificar se o numero esta dentro do range dos numeros inteiros.
 int	ft_is_int(long nb)
@@ -46,6 +46,8 @@ int ft_check_arguments(int ac, char **av)
     i = 0;
     while (i < ac)
     {
+		if (av[i][0] == '\0')
+			return (0);
         if (!ft_is_all_numbers(av[i])) // Verifica se cada argumento é um número.
             return (0);
         nb = ft_atol(av[i]); // Converte para long para verificar range.

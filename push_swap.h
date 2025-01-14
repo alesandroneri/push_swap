@@ -36,6 +36,7 @@ void ft_free_split(char **strs);
 int ft_stack_size(t_stack *stack);
 t_stack *ft_stack_last(t_stack *stack);
 int ft_stack_sorted(t_stack *stack);
+int ft_stack_sorted2(t_stack *stack);
 void init_stack_a(t_stack **a, char **av);
 void fill_stack(t_stack **stack, int n);
 void ft_print_stack(t_stack *stack);

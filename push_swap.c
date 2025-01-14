@@ -29,6 +29,7 @@ int main(int ac, char **av)
     t_stack *b;
     char **split_args;
     int i;
+    int j;
 
     a = NULL;
     b = NULL;
@@ -46,11 +47,23 @@ int main(int ac, char **av)
             ft_free_stack(&a);
             return (ft_putendl_fd("Error", 2), 0);
         }
+        j = i + 1;
+        while (av[j] != NULL)
+        {
+            if (ft_strcmp(av[i], av[j]) == 0)
+            {
+                if (split_args)
+                    ft_free_split(split_args);
+                ft_free_stack(&a);
+                return (ft_putendl_fd("Error", 2), 0);
+            }
+            j++;
+        }
         init_stack_a(&a, split_args);
         ft_free_split(split_args);
     }
     sort_stack(&a, &b);
-    ft_print_stack(a);
+    //ft_print_stack(a);
     ft_free_stack(&a);
     ft_free_stack(&b);
     return (0);
