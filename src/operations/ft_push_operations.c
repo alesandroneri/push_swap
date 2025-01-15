@@ -1,20 +1,30 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_push_operations.c                               :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: aneri-da <aneri-da@student.42.rio>         +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/01/15 14:24:41 by aneri-da          #+#    #+#             */
+/*   Updated: 2025/01/15 14:24:43 by aneri-da         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "../../push_swap.h"
 
-// Move o primeiro elemento de uma stack para o topo de outra stack | Implementa 'pa' e 'pb'
 int	ft_push_lst(t_stack **stack_from, t_stack **stack_to)
 {
-	t_stack *temp;      // Armazena temporariamente o elemento a ser movido
-	t_stack *head_to;   // Cabeça da stack de destino
-	t_stack *head_from; // Cabeça da stack de origem
-	// Verifica se a stack de origem não está vazia
+	t_stack	*temp;
+	t_stack	*head_to;
+	t_stack	*head_from;
+
 	if (ft_stack_size(*stack_from) == 0)
 		return (-1);
 	head_to = *stack_to;
 	head_from = *stack_from;
-	temp = head_from;            // Salva o primeiro nó da stack de origem
-	head_from = head_from->next; // Move a cabeça para o próximo elemento
-	*stack_from = head_from;     // Atualiza a stack de origem
-	// Insere o nó na stack de destino
+	temp = head_from;
+	head_from = head_from->next;
+	*stack_from = head_from;
 	if (!head_to)
 	{
 		head_to = temp;
@@ -32,20 +42,18 @@ int	ft_push_lst(t_stack **stack_from, t_stack **stack_to)
 	return (0);
 }
 
-// Move o primeiro elemento da stack_b para a stack_a | Comando 'pa'
 int	ft_pa(t_stack **stack_b, t_stack **stack_a)
 {
 	if (ft_push_lst(stack_b, stack_a) == -1)
 		return (-1);
-	ft_printf("pa\n"); // Imprime o comando correspondente
+	ft_printf("pa\n");
 	return (0);
 }
 
-// Move o primeiro elemento da stack_a para a stack_b | Comando 'pb'
 int	ft_pb(t_stack **stack_a, t_stack **stack_b)
 {
 	if (ft_push_lst(stack_a, stack_b) == -1)
 		return (-1);
-	ft_printf("pb\n"); // Imprime o comando correspondente
+	ft_printf("pb\n");
 	return (0);
 }

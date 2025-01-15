@@ -18,7 +18,7 @@ SRC_PUSH_SWAP = push_swap.c \
 	src/free/free.c \
 	src/operations/ft_reverse_rotate_operations.c
 
-SRC_CHECKER = checker.c \
+SRC_CHECKER = checker_bonus.c \
 	src/checker/check_arguments_bonus.c \
 	src/checker/free_bonus.c \
 	src/checker/stack_utils_bonus.c \
