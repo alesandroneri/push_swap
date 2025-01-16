@@ -6,9 +6,10 @@
 /*   By: aneri-da <aneri-da@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/22 14:31:54 by aneri-da          #+#    #+#             */
-/*   Updated: 2024/11/26 18:08:06 by aneri-da         ###   ########.fr       */
+/*   Updated: 2025/01/16 18:09:22 by aneri-da         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
 #include "get_next_line.h"
 
 char	*read_and_join(int fd, char **reminder, char *buffer)
@@ -95,10 +96,9 @@ char	*get_next_line(int fd)
 		{
 			if (!reminder || !*reminder)
 			{
-				free(buffer);
 				free(reminder);
 				reminder = NULL;
-				return (NULL);
+				return (free(buffer), NULL);
 			}
 			break ;
 		}

@@ -61,6 +61,11 @@ fclean: clean
 
 re: fclean all
 
+r:$(NAME)
+	clear
+	@echo "Input: ${var}"
+	@./$(NAME) ${var}
+
 v: $(NAME)
 	clear
 	@echo "input: ${var}\n"
@@ -68,5 +73,10 @@ v: $(NAME)
 
 c:
 	@find . -type f -iname "*.c" -exec grep "//" {} +
+
+t:$(NAME) $(CHECK)
+	clear
+	@echo "Input: ${ARG}"
+	@valgrind ./$(NAME) ${ARG} | valgrind ./$(CHECK) ${ARG}
 
 .PHONY: all clean fclean re v c bonus

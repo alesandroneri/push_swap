@@ -6,11 +6,62 @@
 /*   By: aneri-da <aneri-da@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/15 15:17:46 by aneri-da          #+#    #+#             */
-/*   Updated: 2025/01/15 16:09:13 by aneri-da         ###   ########.fr       */
+/*   Updated: 2025/01/16 16:21:57 by aneri-da         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "src/checker/checker_bonus.h"
+
+int valid_arguments2(int ac, char **av, t_stack **stack_a)
+{
+	char **split_args;
+	int i;
+	
+	i = 0;
+	while (++i < ac)
+	{
+		split_args = ft_split(av[i], ' ');
+		if (!split_args)
+		{
+			ft_putendl_fd("Error", 2);
+			return (0);
+		}
+		if (!ft_check_arguments(ft_count_split(split_args), split_args))
+		{
+			ft_free_split(split_args);
+			ft_free_stack(stack_a);
+			ft_putendl_fd("Error", 2);
+			return (0);
+		}
+		init_stack_a(stack_a, split_args);
+		ft_free_split(split_args);
+	}
+	return (1);
+}
+
+int valid_arguments(int ac, char **av, t_stack **stack_a)
+{
+	int i;
+
+	i = 0;
+	if (ac == 1 || (ac == 2 && !av[1][0]))
+		return (0);
+	while (av[i])
+		if (av[i++][0] == '\0')
+		{
+			ft_putendl_fd("Error", 2);
+			return (0);
+		}
+	if (!valid_arguments2(ac, av, stack_a))
+		return (0);
+	if (ft_check_dup_stack(*stack_a))
+	{
+		ft_free_stack(stack_a);
+		ft_putendl_fd("Error", 2);
+		return (0);
+	}
+	return (1);
+}
 
 int	read_operations(char *line, t_stack **stack_a, t_stack **stack_b)
 {
@@ -66,58 +117,32 @@ int	main(int ac, char **av)
 {
 	t_stack	*a;
 	t_stack	*b;
-	char	**split_args;
 	char	*line;
-	int		i;
-	int		j;
 
 	a = NULL;
 	b = NULL;
-	i = 0;
-	if (ac == 1 || (ac == 2 && !av[1][0]))
+	if (!valid_arguments(ac, av, &a))
 		return (0);
-	while (av[i])
-		if (av[i++][0] == '\0')
-			return (ft_putendl_fd("Error", 2), 0);
-	i = 0;
-	while (++i < ac)
-	{
-		split_args = ft_split(av[i], ' ');
-		if (!split_args)
-			return (ft_putendl_fd("Error", 2), 0);
-		if (!ft_check_arguments(ft_count_split(split_args), split_args))
-		{
-			ft_free_split(split_args);
-			ft_free_stack(&a);
-			return (ft_putendl_fd("Error", 2), 0);
-		}
-		j = i + 1;
-		while (av[j] != NULL)
-		{
-			if (ft_strcmp(av[i], av[j++]) == 0)
-			{
-				if (split_args)
-					ft_free_split(split_args);
-				ft_free_stack(&a);
-				return (ft_putendl_fd("Error", 2), 0);
-			}
-		}
-		init_stack_a(&a, split_args);
-		ft_free_split(split_args);
-	}
 	line = get_next_line(0);
 	while (line != NULL)
 	{
 		if (read_operations(line, &a, &b))
 		{
-			if (line)
-				free(line);
+			free(line);
+			ft_free_stack(&a);
+			ft_free_stack(&b);
+			get_next_line(3);
 			ft_putendl_fd("Error", 2);
-			return (-1);
+			return (0);
 		}
 		free(line);
 		line = get_next_line(0);
 	}
 	print_message(&a, &b);
+	// (void)ac;
+	// (void)av;
+	// line = get_next_line(0);
+	// get_next_line(3);
+	// free(line);
 	return (0);
 }

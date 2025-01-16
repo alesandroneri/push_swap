@@ -58,7 +58,7 @@ SRC =	ft_isascii.c \
 
 CC = cc
 
-CC_FLAGS = -Wall -Wextra -Werror
+CC_FLAGS = -g -Wall -Wextra -Werror
 
 OBJS = $(SRC:.c=.o)
 
