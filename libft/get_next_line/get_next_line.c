@@ -6,7 +6,7 @@
 /*   By: aneri-da <aneri-da@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/22 14:31:54 by aneri-da          #+#    #+#             */
-/*   Updated: 2025/01/16 18:09:22 by aneri-da         ###   ########.fr       */
+/*   Updated: 2025/01/17 12:42:26 by aneri-da         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,12 +29,9 @@ char	*read_and_join(int fd, char **reminder, char *buffer)
 	buffer[bytes_read] = '\0';
 	temp = *reminder;
 	*reminder = ft_gnljoin(*reminder, buffer);
-	if (*reminder == NULL)
-	{
-		free(temp);
-		return (NULL);
-	}
 	free(temp);
+	if (*reminder == NULL)
+		return (NULL);
 	return (*reminder);
 }
 
@@ -45,15 +42,15 @@ char	*check_newline(char **reminder, char **line)
 	char	*temp_line;
 
 	newline = ft_strchr(*reminder, '\n');
-	if (newline)
+	if (ft_strchr(*reminder, '\n'))
 	{
 		*newline = '\0';
 		*line = ft_gnljoin(*reminder, "");
 		temp = *reminder;
 		*reminder = ft_gnljoin(newline + 1, "");
 		free(temp);
-		if (!*line || !*reminder)
-			return (NULL);
+		if (!*reminder)
+			return(free(*line), NULL);
 		temp_line = *line;
 		*line = ft_gnljoin(temp_line, "\n");
 		free(temp_line);

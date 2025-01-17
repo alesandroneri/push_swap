@@ -6,11 +6,11 @@
 /*   By: aneri-da <aneri-da@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/15 14:31:08 by aneri-da          #+#    #+#             */
-/*   Updated: 2025/01/15 14:31:13 by aneri-da         ###   ########.fr       */
+/*   Updated: 2025/01/17 15:57:08 by aneri-da         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../push_swap.h"
+#include "../../includes/push_swap.h"
 
 void	ft_sort_tab(int *tab, int size)
 {
@@ -79,26 +79,17 @@ void	radix_sort_b(t_stack **a, t_stack **b, int bit)
 	}
 }
 
-void	radix(t_stack **a, t_stack **b)
+void	radix(t_stack **a, t_stack **b, int size, int max_bits)
 {
-	int		max_bits;
-	int		size;
 	int		i;
 	int		j;
 	t_stack	*head_a;
 	int		*tab;
 
-	size = ft_stack_size(*a);
-	if (size <= 1 || ft_stack_sorted(*a))
-		return ;
 	tab = (int *)malloc(sizeof(int) * size);
-	if (!tab)
-		return ;
 	ft_put_index(a, tab);
 	free(tab);
-	max_bits = 0;
-	while ((size - 1) >> max_bits++)
-		i = -1;
+	i = -1;
 	while (++i < max_bits)
 	{
 		j = -1;
@@ -114,6 +105,4 @@ void	radix(t_stack **a, t_stack **b)
 		}
 		radix_sort_b(a, b, i);
 	}
-	while (ft_stack_size(*b) > 0)
-		ft_pa(b, a);
 }

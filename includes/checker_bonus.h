@@ -6,14 +6,15 @@
 /*   By: aneri-da <aneri-da@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/15 14:29:34 by aneri-da          #+#    #+#             */
-/*   Updated: 2025/01/15 17:15:49 by aneri-da         ###   ########.fr       */
+/*   Updated: 2025/01/17 14:31:38 by aneri-da         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef CHECKER_BONUS_H
 # define CHECKER_BONUS_H
 
-# include "../../libft/libft.h"
+# define EOF 3
+# include "../libft/libft.h"
 
 typedef struct s_stack
 {

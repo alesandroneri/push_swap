@@ -7,25 +7,26 @@ LIBFT = libft/
 LIBFT_A =	$(LIBFT)libft.a
 
 SRC_PUSH_SWAP = push_swap.c \
-	src/algorithm/find_values.c \
+	src/stack/stack_utils.c \
+	src/stack/stack_functions.c \
+	src/arguments/check_arguments.c \
 	src/algorithm/radix_sort.c \
 	src/algorithm/sort_three.c \
-	src/stack_functions/stack_utils.c \
-	src/arguments/check_arguments.c \
 	src/operations/ft_push_operations.c \
 	src/operations/ft_rotate_operations.c \
 	src/operations/ft_swap_operations.c \
-	src/free/free.c \
-	src/operations/ft_reverse_rotate_operations.c
+	src/operations/ft_reverse_rotate_operations.c \
+	src/free/free.c 
 
 SRC_CHECKER = checker_bonus.c \
-	src/checker/check_arguments_bonus.c \
-	src/checker/free_bonus.c \
-	src/checker/stack_utils_bonus.c \
-	src/checker/ft_push_operations_bonus.c \
-	src/checker/ft_rotate_operations_bonus.c \
-	src/checker/ft_swap_operations_bonus.c \
-	src/checker/ft_reverse_rotate_operations_bonus.c
+	src_bonus/arguments_bonus/check_arguments_bonus.c \
+	src_bonus/free_bonus/free_bonus.c \
+	src_bonus/stack_bonus/stack_functions_bonus.c \
+	src_bonus/stack_bonus/stack_utils_bonus.c \
+	src_bonus/operations_bonus/ft_push_operations_bonus.c \
+	src_bonus/operations_bonus/ft_rotate_operations_bonus.c \
+	src_bonus/operations_bonus/ft_swap_operations_bonus.c \
+	src_bonus/operations_bonus/ft_reverse_rotate_operations_bonus.c
 
 CC = cc
 

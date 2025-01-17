@@ -6,11 +6,11 @@
 /*   By: aneri-da <aneri-da@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/15 14:24:35 by aneri-da          #+#    #+#             */
-/*   Updated: 2025/01/15 14:24:36 by aneri-da         ###   ########.fr       */
+/*   Updated: 2025/01/17 14:29:56 by aneri-da         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../push_swap.h"
+#include "../../includes/push_swap.h"
 
 int	ft_reverse_rotate_lst(t_stack **stack)
 {

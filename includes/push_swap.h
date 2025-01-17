@@ -1,7 +1,7 @@
 #ifndef PUSH_SWAP_H
 # define PUSH_SWAP_H
 
-# include "libft/libft.h"
+# include "../libft/libft.h"
 
 typedef struct s_stack
 {
@@ -24,7 +24,7 @@ int					ft_check_dup_stack(t_stack *stack);
 t_stack				*find_min(t_stack *stack);
 t_stack				*find_max(t_stack *stack);
 void				sort_three(t_stack **stack);
-void				radix(t_stack **a, t_stack **b);
+void				radix(t_stack **a, t_stack **b, int size, int max_bits);
 int					ft_is_int(long nb);
 int					ft_is_all_numbers(char *nb);
 int					ft_count_split(char **split_args);

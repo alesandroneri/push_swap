@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   check_arguments.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: aneri-da <aneri-da@student.42.fr>          +#+  +:+       +#+        */
+/*   By: aneri-da <aneri-da@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/15 14:14:28 by aneri-da          #+#    #+#             */
-/*   Updated: 2025/01/15 14:19:26 by aneri-da         ###   ########.fr       */
+/*   Updated: 2025/01/17 14:37:26 by aneri-da         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../push_swap.h"
+#include "../../includes/push_swap.h"
 
 int	ft_is_int(long nb)
 {

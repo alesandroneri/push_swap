@@ -6,11 +6,11 @@
 /*   By: aneri-da <aneri-da@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/15 14:25:57 by aneri-da          #+#    #+#             */
-/*   Updated: 2025/01/15 15:13:57 by aneri-da         ###   ########.fr       */
+/*   Updated: 2025/01/17 14:32:36 by aneri-da         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "checker_bonus.h"
+#include "../../includes/checker_bonus.h"
 
 int	ft_swap_lst(t_stack **stack)
 {

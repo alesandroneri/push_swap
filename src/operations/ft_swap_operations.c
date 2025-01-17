@@ -6,11 +6,11 @@
 /*   By: aneri-da <aneri-da@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/15 14:23:41 by aneri-da          #+#    #+#             */
-/*   Updated: 2025/01/15 14:24:04 by aneri-da         ###   ########.fr       */
+/*   Updated: 2025/01/17 14:35:39 by aneri-da         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../push_swap.h"
+#include "../../includes/push_swap.h"
 
 int	ft_swap_lst(t_stack **stack)
 {

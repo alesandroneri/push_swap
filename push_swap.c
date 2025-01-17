@@ -6,11 +6,11 @@
 /*   By: aneri-da <aneri-da@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/06 10:50:33 by aneri-da          #+#    #+#             */
-/*   Updated: 2025/01/16 14:52:33 by aneri-da         ###   ########.fr       */
+/*   Updated: 2025/01/17 15:54:39 by aneri-da         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "includes/push_swap.h"
 
 void valid_arguments(int ac, char **av, t_stack **stack_a)
 {
@@ -42,6 +42,9 @@ void valid_arguments(int ac, char **av, t_stack **stack_a)
 
 void	sort_stack(t_stack **stack_a, t_stack **stack_b)
 {
+	int size;
+	int max_bits;
+
 	if (ft_check_dup_stack(*stack_a))
 	{
 		ft_free_stack(stack_a);
@@ -55,7 +58,13 @@ void	sort_stack(t_stack **stack_a, t_stack **stack_b)
 		else if (ft_stack_size(*stack_a) == 3)
 			sort_three(stack_a);
 		else
-			radix(stack_a, stack_b);
+		{
+			max_bits = 0;
+			size = ft_stack_size(*stack_a);
+			while((size - 1) >> max_bits++)
+				;
+			radix(stack_a, stack_b, size, max_bits);
+		}
 	}
 }
 int	main(int ac, char **av)
@@ -67,7 +76,7 @@ int	main(int ac, char **av)
 	b = NULL;
 	valid_arguments(ac, av, &a);
 	sort_stack(&a, &b);
-	//ft_print_stack(a);
+	ft_print_stack(a);
 	ft_free_stack(&a);
 	ft_free_stack(&b);
 	return (0);

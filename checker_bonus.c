@@ -6,11 +6,11 @@
 /*   By: aneri-da <aneri-da@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/15 15:17:46 by aneri-da          #+#    #+#             */
-/*   Updated: 2025/01/16 16:21:57 by aneri-da         ###   ########.fr       */
+/*   Updated: 2025/01/17 14:36:24 by aneri-da         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "src/checker/checker_bonus.h"
+#include "includes/checker_bonus.h"
 
 int valid_arguments2(int ac, char **av, t_stack **stack_a)
 {
@@ -129,20 +129,15 @@ int	main(int ac, char **av)
 		if (read_operations(line, &a, &b))
 		{
 			free(line);
+			get_next_line(EOF);
 			ft_free_stack(&a);
 			ft_free_stack(&b);
-			get_next_line(3);
 			ft_putendl_fd("Error", 2);
-			return (0);
+			return (close(EOF), 0);
 		}
 		free(line);
 		line = get_next_line(0);
 	}
 	print_message(&a, &b);
-	// (void)ac;
-	// (void)av;
-	// line = get_next_line(0);
-	// get_next_line(3);
-	// free(line);
 	return (0);
 }
