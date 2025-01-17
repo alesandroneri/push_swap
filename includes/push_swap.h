@@ -24,6 +24,8 @@ int					ft_check_dup_stack(t_stack *stack);
 t_stack				*find_min(t_stack *stack);
 t_stack				*find_max(t_stack *stack);
 void				sort_three(t_stack **stack);
+void				sort_four(t_stack **stack_a, t_stack **stack_b);
+void				sort_five(t_stack **stack_a, t_stack **stack_b);
 void				radix(t_stack **a, t_stack **b, int size, int max_bits);
 int					ft_is_int(long nb);
 int					ft_is_all_numbers(char *nb);

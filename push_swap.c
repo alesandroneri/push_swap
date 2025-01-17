@@ -6,7 +6,7 @@
 /*   By: aneri-da <aneri-da@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/06 10:50:33 by aneri-da          #+#    #+#             */
-/*   Updated: 2025/01/17 15:54:39 by aneri-da         ###   ########.fr       */
+/*   Updated: 2025/01/17 18:32:04 by aneri-da         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,6 +57,10 @@ void	sort_stack(t_stack **stack_a, t_stack **stack_b)
 			ft_sa(stack_a);
 		else if (ft_stack_size(*stack_a) == 3)
 			sort_three(stack_a);
+		else if (ft_stack_size(*stack_a) == 4)
+			sort_four(stack_a, stack_b);
+		else if (ft_stack_size(*stack_a) == 5)
+			sort_five(stack_a, stack_b);
 		else
 		{
 			max_bits = 0;
@@ -76,7 +80,7 @@ int	main(int ac, char **av)
 	b = NULL;
 	valid_arguments(ac, av, &a);
 	sort_stack(&a, &b);
-	ft_print_stack(a);
+	//ft_print_stack(a);
 	ft_free_stack(&a);
 	ft_free_stack(&b);
 	return (0);
