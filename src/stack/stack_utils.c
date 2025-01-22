@@ -6,7 +6,7 @@
 /*   By: aneri-da <aneri-da@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/15 14:20:08 by aneri-da          #+#    #+#             */
-/*   Updated: 2025/01/17 15:13:02 by aneri-da         ###   ########.fr       */
+/*   Updated: 2025/01/22 13:52:49 by aneri-da         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,6 +77,7 @@ t_stack	*find_min(t_stack *stack)
 	}
 	return (min_node);
 }
+
 t_stack	*find_max(t_stack *stack)
 {
 	t_stack	*max_node;

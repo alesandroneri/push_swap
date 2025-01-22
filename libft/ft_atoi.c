@@ -6,9 +6,10 @@
 /*   By: aneri-da <aneri-da@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/23 15:06:21 by aneri-da          #+#    #+#             */
-/*   Updated: 2024/10/09 14:31:35 by aneri-da         ###   ########.fr       */
+/*   Updated: 2025/01/22 14:04:34 by aneri-da         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
 int	ft_atoi(const char *nptr)
 {
 	int	result;

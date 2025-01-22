@@ -6,7 +6,7 @@
 /*   By: aneri-da <aneri-da@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/17 14:59:51 by aneri-da          #+#    #+#             */
-/*   Updated: 2025/01/17 15:12:53 by aneri-da         ###   ########.fr       */
+/*   Updated: 2025/01/22 14:02:50 by aneri-da         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,7 +52,7 @@ t_stack	*find_min(t_stack *stack)
 
 	if (!stack)
 		return (NULL);
-    min = 9223372036854775807;
+	min = 9223372036854775807;
 	while (stack != NULL)
 	{
 		if (stack->value < min)
@@ -64,6 +64,7 @@ t_stack	*find_min(t_stack *stack)
 	}
 	return (min_node);
 }
+
 t_stack	*find_max(t_stack *stack)
 {
 	t_stack	*max_node;
@@ -71,7 +72,7 @@ t_stack	*find_max(t_stack *stack)
 
 	if (!stack)
 		return (NULL);
-    max = -9223372036854775807-1;
+	max = -9223372036854775807 - 1;
 	while (stack != NULL)
 	{
 		if (stack->value > max)

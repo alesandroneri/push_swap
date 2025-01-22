@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_atol_base.c                                     :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: aneri-da <aneri-da@student.42.rio>         +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/01/22 14:04:47 by aneri-da          #+#    #+#             */
+/*   Updated: 2025/01/22 14:04:53 by aneri-da         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "libft.h"
 
 int	is_base(char c, int base)
@@ -28,7 +40,7 @@ long	ft_atol_base(char *str, int str_base)
 {
 	long	result;
 	long	sign;
-	int	i;
+	int		i;
 
 	i = 0;
 	result = 0;

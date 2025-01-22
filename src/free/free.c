@@ -6,7 +6,7 @@
 /*   By: aneri-da <aneri-da@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/15 14:24:50 by aneri-da          #+#    #+#             */
-/*   Updated: 2025/01/17 14:30:29 by aneri-da         ###   ########.fr       */
+/*   Updated: 2025/01/22 13:49:24 by aneri-da         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,9 +23,10 @@ void	ft_free_stack(t_stack **stack)
 		*stack = temp;
 	}
 }
+
 void	ft_free_split(char **strs)
 {
-	int i;
+	int	i;
 
 	i = 0;
 	while (strs[i] != NULL)

@@ -6,7 +6,7 @@
 /*   By: aneri-da <aneri-da@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/22 14:31:54 by aneri-da          #+#    #+#             */
-/*   Updated: 2025/01/17 12:42:26 by aneri-da         ###   ########.fr       */
+/*   Updated: 2025/01/22 14:09:31 by aneri-da         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,7 +50,7 @@ char	*check_newline(char **reminder, char **line)
 		*reminder = ft_gnljoin(newline + 1, "");
 		free(temp);
 		if (!*reminder)
-			return(free(*line), NULL);
+			return (free(*line), NULL);
 		temp_line = *line;
 		*line = ft_gnljoin(temp_line, "\n");
 		free(temp_line);
@@ -84,7 +84,7 @@ char	*get_next_line(int fd)
 	char		*newline;
 
 	buffer = checking_malloc_read_fd(fd);
-	if(!buffer)
+	if (!buffer)
 		return (NULL);
 	newline = ft_strchr(reminder, '\n');
 	while (!newline)

@@ -6,14 +6,13 @@
 /*   By: aneri-da <aneri-da@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/15 14:29:34 by aneri-da          #+#    #+#             */
-/*   Updated: 2025/01/17 14:31:38 by aneri-da         ###   ########.fr       */
+/*   Updated: 2025/01/22 13:46:36 by aneri-da         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef CHECKER_BONUS_H
 # define CHECKER_BONUS_H
 
-# define EOF 3
 # include "../libft/libft.h"
 
 typedef struct s_stack
@@ -55,5 +54,9 @@ void				ft_print_stack(t_stack *stack);
 int					ft_check_dup_stack(t_stack *stack);
 void				ft_free_stack(t_stack **stack);
 void				ft_free_split(char **strs);
+void				ft_free_stacks(t_stack **stack_a, t_stack **stack_b);
+int					valid_arguments(int ac, char **av, t_stack **stack_a);
+int					read_operations(char *line, t_stack **stack_a,
+						t_stack **stack_b);
 
 #endif

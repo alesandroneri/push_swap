@@ -6,7 +6,7 @@
 /*   By: aneri-da <aneri-da@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/17 14:00:19 by aneri-da          #+#    #+#             */
-/*   Updated: 2025/01/17 12:31:40 by aneri-da         ###   ########.fr       */
+/*   Updated: 2025/01/22 14:10:54 by aneri-da         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@
 #  define BUFFER_SIZE 1
 # endif
 
-#include "../libft.h"
+# include "../libft.h"
 
 char	*get_next_line(int fd);
 char	*ft_gnljoin(char *s1, char *s2);

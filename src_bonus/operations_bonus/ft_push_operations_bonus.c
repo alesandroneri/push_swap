@@ -6,7 +6,7 @@
 /*   By: aneri-da <aneri-da@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/15 14:28:59 by aneri-da          #+#    #+#             */
-/*   Updated: 2025/01/17 14:32:27 by aneri-da         ###   ########.fr       */
+/*   Updated: 2025/01/22 14:01:38 by aneri-da         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,14 +31,12 @@ int	ft_push_lst(t_stack **stack_from, t_stack **stack_to)
 		head_to->next = NULL;
 		head_to->prev = NULL;
 		*stack_to = head_to;
+		return (0);
 	}
-	else
-	{
-		temp->next = head_to;
-		head_to->prev = temp;
-		temp->prev = NULL;
-		*stack_to = temp;
-	}
+	temp->next = head_to;
+	head_to->prev = temp;
+	temp->prev = NULL;
+	*stack_to = temp;
 	return (0);
 }
 

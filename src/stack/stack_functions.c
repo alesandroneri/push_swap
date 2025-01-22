@@ -6,7 +6,7 @@
 /*   By: aneri-da <aneri-da@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/15 14:23:06 by aneri-da          #+#    #+#             */
-/*   Updated: 2025/01/17 15:05:32 by aneri-da         ###   ########.fr       */
+/*   Updated: 2025/01/22 13:52:35 by aneri-da         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,6 +63,7 @@ void	fill_stack(t_stack **stack, int n)
 		node->prev = last_node;
 	}
 }
+
 void	init_stack_a(t_stack **a, char **av)
 {
 	int		i;

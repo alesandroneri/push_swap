@@ -11,7 +11,7 @@ SRC_PUSH_SWAP = push_swap.c \
 	src/stack/stack_functions.c \
 	src/arguments/check_arguments.c \
 	src/algorithm/radix_sort.c \
-	src/algorithm/sort_three.c \
+	src/algorithm/sort_values.c \
 	src/operations/ft_push_operations.c \
 	src/operations/ft_rotate_operations.c \
 	src/operations/ft_swap_operations.c \
@@ -20,9 +20,11 @@ SRC_PUSH_SWAP = push_swap.c \
 
 SRC_CHECKER = checker_bonus.c \
 	src_bonus/arguments_bonus/check_arguments_bonus.c \
+	src_bonus/arguments_bonus/validation_bonus.c \
 	src_bonus/free_bonus/free_bonus.c \
 	src_bonus/stack_bonus/stack_functions_bonus.c \
 	src_bonus/stack_bonus/stack_utils_bonus.c \
+	src_bonus/commands_bonus/read_operations_bonus.c \
 	src_bonus/operations_bonus/ft_push_operations_bonus.c \
 	src_bonus/operations_bonus/ft_rotate_operations_bonus.c \
 	src_bonus/operations_bonus/ft_swap_operations_bonus.c \
@@ -201,4 +203,4 @@ t:$(NAME) $(CHECK)
 	@echo "Input: ${ARG}"
 	@valgrind ./$(NAME) ${ARG} | valgrind ./$(CHECK) ${ARG}
 
-.PHONY: all clean fclean re v c bonus
+.PHONY: all clean fclean re v c bonus t
