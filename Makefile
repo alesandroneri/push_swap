@@ -77,7 +77,7 @@ v: $(NAME)
 c:
 	@find . -type f -iname "*.c" -exec grep "//" {} +
 
-chat:
+five:
 	./$(NAME) 0 1 2 4 3 | wc -l
 	./$(NAME) 0 1 3 2 4 | wc -l
 	./$(NAME) 0 1 3 4 2 | wc -l

@@ -6,7 +6,7 @@
 /*   By: aneri-da <aneri-da@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/06 10:50:33 by aneri-da          #+#    #+#             */
-/*   Updated: 2025/01/28 14:31:19 by aneri-da         ###   ########.fr       */
+/*   Updated: 2025/01/28 15:41:43 by aneri-da         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -86,6 +86,8 @@ int	main(int ac, char **av)
 	a = NULL;
 	b = NULL;
 	if (valid_arguments(ac, av, &a) == 0)
+		return (0);
+	if (ft_stack_size(a) == 0)
 		return (0);
 	sort_stack(&a, &b);
 	ft_free_stack(&a);
