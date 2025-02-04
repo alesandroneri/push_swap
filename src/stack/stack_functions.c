@@ -73,7 +73,7 @@ void	init_stack_a(t_stack **a, char **av)
 	while (av[i])
 	{
 		n = ft_atol(av[i]);
-		if (n < -2147483648 || n > 2147483647)
+		if (n < (long)-2147483648 || n > (long)2147483647)
 		{
 			ft_putendl_fd("Error", 2);
 			return ;
